@@ -68,12 +68,15 @@ export function AddNewNode(newNode) {
     })   
 }
 
+//async issues i think
 export function GetNextNodes(query) { //gets the child nodes of a given node based on that node's text content
     //probably use database to store nodes, for now gonna use a text file
     //get the children of this node
     var prevNode = query["parent"]; //get text of prev node
     GetNodeFile(txtDB); //get all the nodes
-    console.log("nodes: "+ nodes)
+    while (nodes == undefined) {
+        //do nothing
+    }
     var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
     if (nodes == "EMPTY") {
         nodesToLoad = "EMPTY";
