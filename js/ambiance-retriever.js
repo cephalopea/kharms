@@ -1,5 +1,5 @@
-var fs = require("fs");
-var path = require('path');
+import * as fs from "fs";
+import * as path from "path";
 
 export updateBackground = function(query) { // location is the location of the story. eg. 'field'
     var file_name = "images/" + query["location"] + ".mp3";
