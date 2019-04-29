@@ -70,8 +70,7 @@ function LoadNodes(data) { //load received nodes into the html page
 }
 
 function init() {
-    var nodes = nodeRetriever.GetNextNodes({parent: "ROOT"}); //send a request to the server to load the next set of child nodes
-    LoadNodes(nodes);
+    nodeRetriever.GetNextNodes({parent: "ROOT"}, LoadNodes); //send a request to the server to load the next set of child nodes
 }
 
 init()

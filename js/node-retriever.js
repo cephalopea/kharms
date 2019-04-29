@@ -51,13 +51,15 @@ function LoadAllNodes() { //gets all the nodes from the txt file database
 export function AddNewNode(newNode) {
     delete newNode["request"]; //get rid of the request portion of the node
     var newNodeString = StringifyNode(newNode); //turn the new node into a string
-    if (newNode["id"] != 0) { //this isn't the first node, it needs a newline
-        newNodeString = "\n" + newNodeString;
+    newFileString = "";
+    if (nodes != "EMPTY") {
+        nodes.forEach(node => {
+            newFileString = newFileString + StringifyNode(node) + "\n";
+        })
     }
-    var spaceRegexp = new RegExp("%20", "g");
-    var apostRegexp = new RegExp("%27", "g");
-    newNode["text"] = newNode["text"].replace(spaceRegexp, " "); //replace url space with regular space
-    newNode["text"] = newNode["text"].replace(apostRegexp, "'"); //replace url ' with regular '
+    newFileString = newFileString + newNodeString;
+    var fileBlob = new Blob([newFileString], { type: 'text/plain' });
+    
     fs.appendFile(txtDB, newNodeString, (err) => { //append the new node to the text file OR add it to the database, depending on implementation 
         if (err) {
             return {error: "Error adding new node to database"}; //send error msg to client
