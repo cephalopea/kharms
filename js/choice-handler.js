@@ -29,7 +29,7 @@ function RemoveUnderline() { //removes an underline from an element
     this.style.textDecoration = "none";
 }
 
-function LoadNodes(data) { //load received nodes into the html page
+function LoadNodes(nodes) { //load received nodes into the html page
     if (nodes["error"] != undefined) {
         console.log("error retrieving nodes");
         return false;
