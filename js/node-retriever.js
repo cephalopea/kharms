@@ -84,5 +84,5 @@ export function GetNextNodes(query) { //gets the child nodes of a given node bas
             return(node["parent"] == prevNode); //get the nodes whose parent matches the parent passed in
         });
     }
-    return sendObj = {nodes: nodesToLoad, error: undefined}; //make an object (sendObj) to send that contains the child nodes of our selected parent
+    return {nodes: nodesToLoad, error: undefined}; //make an object (sendObj) to send that contains the child nodes of our selected parent
 }
