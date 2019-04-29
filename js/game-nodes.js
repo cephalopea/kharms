@@ -1,5 +1,5 @@
 import * as loc from "./location.js";
-import * as nodeRetriever from "./node-retriever.js";
+import * as nodeRetriever from "./file-retriever.js";
 
 function SelectOption() { //handles selecting a node
     this.classList.remove("user"); //remove the user class from the selected node
