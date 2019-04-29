@@ -1,0 +1,20 @@
+id=0|parent=ROOT|type=auth|text=In the courtyard stands an old woman holding in her hands a clock.|location=courtyard
+id=1|parent=0|type=user|text=Ignore her.|location=courtyard
+id=2|parent=0|type=user|text=Ask her for the time.|location=courtyard
+id=3|parent=2|type=auth|text=You walk past the old woman, stop, and ask her: <i>What time is it?<br>Take a look,</i> says the old woman.|location=courtyard
+id=4|parent=2|type=user|text=Look at the clock.|location=courtyard
+id=5|parent=4|type=auth|text=You look and see that the clock has no hands.|location=courtyard
+id=6|parent=4|type=user|text=???|location=courtyard
+id=7|parent=6|type=auth|text=<i>There are no hands there,</i> you say.<br>The old woman looks at the clock face and says to you: <i>It's quarter to three.</i>|location=courtyard
+id=8|parent=6|type=user|text=Leave.|location=courtyard
+id=9|parent=8|type=auth|text=<i>So, that's how it is? Thanks very much,</i> you say, and leave.<br>The old woman yells something at your back.|location=courtyard
+id=10|parent=8|type=user|text=Keep going.|location=courtyard
+id=11|parent=10|type=auth|text=You walk on without looking around. You go out onto the street and walk on the sunny side. The spring sun is very pleasant. You walk on, squinting and smoking your pipe. On the corner of Sadovaya you happen upon Sakerdon Mikhailovich walking towards you.|location=street
+id=12|parent=10|type=user|text=Stop and talk to Sakerdon Mikhailovich.|location=street
+id=13|parent=10|type=user|text=Ignore Sakerdon Mikhailovich.|location=street
+id=14|parent=12|type=auth|text=You greet each other, stop and talk for a long while.|location=street
+id=14|parent=12|type=user|text=Stay and talk longer.|location=street
+id=15|parent=12|type=user|text=Time to move along.|location=street
+id=16|parent=14|type=auth|text=You get bored of standing out on the street and invite Sakerdon Mikhailovich into a cellar. You drink vodka, chasing it with hard-boiled eggs and sprats, then say your goodbyes, and you go on alone.<br>Then you suddenly remember that you've forgotten to turn off the electric stove at home.|location=street
+id=18|parent=14|type=user|text=Go home to turn off the stove.|location=street
+id=19|parent=14|type=user|text=I'm sure it will be fine.|location=street

@@ -124,7 +124,7 @@ function enterChildNode() {
 }
 
 function checkPassword() { //checks the password
-    if (passField.value == "dundermifflin") { //if the password is correct
+    if (passField.value == "dog") { //if the password is correct
         formDiv.innerHTML = ""; //remove the password field
         utils.SendXML({request: "GetNextNodes", text: "ALL"}, addNodeInfo); //get all the nodes, then add to page
     } else {

@@ -47,7 +47,6 @@ function ModifyFilepath (filepath, ext) { //adds the correct directory prefixes 
         default:
             return filepath;
     }
-    console.log(filepath);
     return filepath;
 }
 
