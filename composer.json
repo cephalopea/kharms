@@ -1,5 +1,6 @@
 {
   "require": {
     "php": "^7.2.0",
+    "tumblr/tumblr": "^0.4.0"
   }
 }
