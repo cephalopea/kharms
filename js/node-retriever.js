@@ -1,5 +1,7 @@
 var txtDB = "txt/fake-db.txt";
 var nodes = undefined;
+var storeQuery;
+var storeCallback;
 
 function StringifyNode(node) { //returns nodes like this: id=1|parent=0|type=user|text=I spin around in a circle.|location=field
     var finishedNode = ""; //empty string to append to
@@ -20,17 +22,18 @@ function UnstringifyNode(node) { //returns nodes like this: {"id": 1, "parent": 
 }
 
 export function GetNodeFile(filepath, query, callback) {
+    storeQuery = query;
+    storeCallback = callback;
     var fileReq = new XMLHttpRequest();
-    fileReq.addEventListener("load", function() {LoadAllNodes(query, callback)});
+    fileReq.addEventListener("load", LoadAllNodes);
     fileReq.open("GET", filepath);
     fileReq.send();
 }
 
-function LoadAllNodes(query) { //gets all the nodes from the txt file database
+function LoadAllNodes() { //gets all the nodes from the txt file database
     //assumes txt file is formatted with each node on a newline, commas between key/val pairs, and = between key and value (no colon)
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
-    console.log(this);
     var nodeDoc = this.responseText;
     var finalNodes = []; //holds all the nodes retrieved from the database/txt doc
     if (nodeDoc != "") {
@@ -42,7 +45,7 @@ function LoadAllNodes(query) { //gets all the nodes from the txt file database
         finalNodes = "EMPTY";
     }
     nodes = finalNodes;
-    GetNextNodes(query, callback);
+    GetNextNodes(storeQuery, storeCallback);
 }
 
 export function AddNewNode(newNode) {
