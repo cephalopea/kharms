@@ -1,6 +1,6 @@
 id=0|parent=ROOT|type=auth|text=In the courtyard stands an old woman holding in her hands a clock.|location=courtyard
-id=1|parent=0|type=user|text=Ignore her.|location=courtyard
-id=2|parent=0|type=user|text=Ask her for the time.|location=courtyard
+id=1|parent=ROOT|type=user|text=Ignore her.|location=courtyard
+id=2|parent=ROOT|type=user|text=Ask her for the time.|location=courtyard
 id=3|parent=2|type=auth|text=You walk past the old woman, stop, and ask her: <i>What time is it?<br>Take a look,</i> says the old woman.|location=courtyard
 id=4|parent=2|type=user|text=Look at the clock.|location=courtyard
 id=5|parent=4|type=auth|text=You look and see that the clock has no hands.|location=courtyard
