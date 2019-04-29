@@ -30,6 +30,7 @@ function LoadAllNodes(query) { //gets all the nodes from the txt file database
     //assumes txt file is formatted with each node on a newline, commas between key/val pairs, and = between key and value (no colon)
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
+    console.log(this);
     var nodeDoc = this.responseText;
     var finalNodes = []; //holds all the nodes retrieved from the database/txt doc
     if (nodeDoc != "") {
