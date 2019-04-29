@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import * as fs from "./fs";
 
 var txtDB = "public-html/txt/fake-db.txt";
 var nodes = undefined;
