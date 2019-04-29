@@ -35,11 +35,11 @@ function LoadNodes(nodes) { //load received nodes into the html page
         return false;
     } else {
         var body = document.getElementsByTagName("body")[0]; //get the body of the page
-        var authNode = nodesToLoad.filter(node => { //filter the nodes and get only the auth node, save it in authNodes
+        var authNode = nodes["nodes"].filter(node => { //filter the nodes and get only the auth node, save it in authNodes
             return (node["type"] == "auth");
         })
         authNode = authNode[0]; //should only ever be one auth node at a time, so set this to the first element to get it out of the array
-        var userNodes = nodesToLoad.filter(node => { //filter the nodes and get only the user nodes, save them in userNodes
+        var userNodes = nodes["nodes"].filter(node => { //filter the nodes and get only the user nodes, save them in userNodes
             return (node["type"] == "user");
         })
         console.log("user nodes: " + userNodes);
