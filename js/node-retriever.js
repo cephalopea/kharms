@@ -6,10 +6,6 @@ function StringifyNode(node) { //returns nodes like this: id=1|parent=0|type=use
     Object.entries(node).forEach(([key, value]) => { //loop through key/val pairs
         finishedNode += key + "=" + value + "|"; //add separators
     });
-    var spaceRegexp = new RegExp("%20", "g");
-    var apostRegexp = new RegExp("%27", "g");
-    finishedNode = finishedNode.replace(spaceRegexp, " "); //replace url space with regular space
-    finishedNode = finishedNode.replace(apostRegexp, "'"); //replace url ' with regular '
     return finishedNode.slice(0,-1); //remove unnecessary | from end of string, and return
 }
 
@@ -23,13 +19,19 @@ function UnstringifyNode(node) { //returns nodes like this: {"id": 1, "parent": 
     return finishedNode; //return the node
 }
 
-function LoadAllNodes(filepath) { //gets all the nodes from the txt file database
+function GetNodeFile(filepath) {
+    var fileReq = new XMLHttpRequest();
+    fileReq.addEventListener("load", LoadAllNodes);
+    fileReq.open("GET", filepath);
+    fileReq.send();
+}
+
+function LoadAllNodes() { //gets all the nodes from the txt file database
     //assumes txt file is formatted with each node on a newline, commas between key/val pairs, and = between key and value (no colon)
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
+    var nodeDoc = this.responseText;
     var finalNodes = []; //holds all the nodes retrieved from the database/txt doc
-    var reader = new FileReader(); //create new filereader
-    var nodeDoc = reader.readAsText(filepath); //read everything in the txt doc and convert to string
     if (nodeDoc != "") {
         var addNodes = nodeDoc.split("\n"); //split the string at newlines (split into nodes)
         for (let node of addNodes) { //for each string that represents a node
@@ -74,7 +76,9 @@ export function GetNextNodes(query) { //gets the child nodes of a given node bas
     }
     var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
     if (nodes == "EMPTY") {
-        nodesToLoad = [nodes];
+        nodesToLoad = "EMPTY";
+    } else if (query["text"] =="ALL") {
+        nodesToLoad = nodes;
     } else {
         nodesToLoad = nodes.filter(node => { //filter all the nodes and assign the returned nodes to nodesToLoad
             return(node["parent"] == prevNode); //get the nodes whose parent matches the parent passed in
