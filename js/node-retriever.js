@@ -31,7 +31,7 @@ function LoadAllNodes() { //gets all the nodes from the txt file database
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
     var nodeDoc = this.responseText;
-    console.log(nodeDoc)
+    console.log("node doc:" + nodeDoc)
     var finalNodes = []; //holds all the nodes retrieved from the database/txt doc
     if (nodeDoc != "") {
         var addNodes = nodeDoc.split("\n"); //split the string at newlines (split into nodes)
