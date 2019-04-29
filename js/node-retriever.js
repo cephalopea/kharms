@@ -1,4 +1,4 @@
-var txtDB = "public-html/txt/fake-db.txt";
+var txtDB = "txt/fake-db.txt";
 var nodes = undefined;
 
 function StringifyNode(node) { //returns nodes like this: id=1|parent=0|type=user|text=I spin around in a circle.|location=field
