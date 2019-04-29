@@ -19,7 +19,7 @@ function UnstringifyNode(node) { //returns nodes like this: {"id": 1, "parent": 
     return finishedNode; //return the node
 }
 
-function GetNodeFile(filepath, query, callback) {
+export function GetNodeFile(filepath, query, callback) {
     var fileReq = new XMLHttpRequest();
     fileReq.addEventListener("load", function() {LoadAllNodes(query, callback)});
     fileReq.open("GET", filepath);
