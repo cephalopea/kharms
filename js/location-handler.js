@@ -1,6 +1,5 @@
 //images from search.creativecommons.org
 //sound files from freesound.org
-import * as utils from "./client-utils.js";
 import * as ambRetriever from "./ambiance-retriever.js";
 
 var location = undefined;

@@ -1,5 +1,3 @@
-import * as utils from "./client-utils.js";
-
 var textDiv = undefined;
 var form = undefined;
 var formDiv = undefined;
