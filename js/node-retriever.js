@@ -1,4 +1,3 @@
-import * as utils from "./server-utils.js";
 var fs = require("fs");
 
 var txtDB = "public-html/txt/fake-db.txt";

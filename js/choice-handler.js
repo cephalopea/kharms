@@ -1,4 +1,3 @@
-import * as utils from "./client-utils.js";
 import * as loc from "./location-handler.js";
 import * as nodeRetriever from "./node-retriever.js";
 

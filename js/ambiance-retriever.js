@@ -1,5 +1,3 @@
-var utils = require("./server-utils.js");
-var fileserver = require("./fileserve");
 var fs = require("fs");
 var path = require('path');
 
