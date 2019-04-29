@@ -75,6 +75,7 @@ export function GetNextNodes(query) { //gets the child nodes of a given node bas
     //get the children of this node
     var prevNode = query["parent"]; //get text of prev node
     if (nodes == undefined) { //if the nodes aren't loaded already
+        console.log("nodes aint defined")
         nodes = GetNodeFile(txtDB); //get all the nodes
     }
     var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now

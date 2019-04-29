@@ -18,7 +18,6 @@ function init() {
 }
 
 function addNodeInfo(nodes) { //spawns the entry form for adding new nodes
-    console.log(nodes["nodes"])
     if (nodes["nodes"] == "EMPTY") {
         addChildNodeForm();
         return true;
