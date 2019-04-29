@@ -43,6 +43,7 @@ function LoadAllNodes() { //gets all the nodes from the txt file database
         console.log("empty")
         finalNodes = "EMPTY";
     }
+    console.log("finalNodes: " + finalNodes)
     return finalNodes; //return all the nodes (or nothing, if there's nothing)
 }
 
