@@ -5,6 +5,16 @@ import * as ambRetriever from "./ambiance-retriever.js";
 var location = undefined;
 var audio = null;
 
+function GetSound(query) {
+    var file_name = "sounds/" + query["location"] + ".jpeg";
+    UpdateSound({error: undefined, files: file_name});
+}
+
+function GetBackground(query) { // location is the location of the story. eg. 'field'
+    var file_name = "images/" + query["location"] + ".mp3";
+    UpdateBackground({error: undefined, files: file_name});
+}
+
 function UpdateBackground(backgroundObj) { //change the background image file to the one sent by the server
     if (backgroundObj["error"] != undefined) {
         alert("Error loading photos"); //if did not successfully receive a response
@@ -37,9 +47,7 @@ function UpdateSound(soundObj) { //change the sound file to the one sent by the 
 export function CheckLocation(currNode) { //figure out if the location has changed
     if (location != currNode["location"]) { //if the location stored doesn't equal the new location
         location = currNode["location"]; //set the stored location to equal the new one
-        var background = ambRetriever.updateBackground({"location": location});
-        UpdateBackground(background);
-        var sound = ambRetriever.updateSound({"location": location});
-        UpdateSound(sound);
+        GetBackground({"location": location});
+        GetSound({"location": location});
     }
 }
