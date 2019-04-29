@@ -1,6 +1,4 @@
-import * as nodeRetriever from "./node-retriever.js";
-
-var txtDB = "txt/fake-db.txt";
+import * as utils from "./client-utils.js";
 
 var textDiv = undefined;
 var form = undefined;
@@ -19,7 +17,8 @@ function init() {
     return true;
 }
 
-function addNodeInfo(nodes) { //spawns the entry form for adding new nodes
+function addNodeInfo(data) { //spawns the entry form for adding new nodes
+    var nodes = JSON.parse(data.srcElement.responseText);
     if (nodes["nodes"] == "EMPTY") {
         addChildNodeForm();
         return true;
@@ -113,21 +112,21 @@ function addChildNodeForm() { //creates a form to add a child node and adds it t
 function enterChildNode() {
     var fields = this.parentNode.childNodes; //get all the child nodes of the form div (input fields, button, and labels)
     var xmlObj = {}; //create empty xml obj
+    xmlObj["request"] = "AddNewNode"; //add request
     xmlObj["id"] = fields[1].innerHTML; //add assigned id
     xmlObj["parent"] = fields[3].value; //add parent node
     xmlObj["type"] = fields[5].value; //add type of node
     xmlObj["text"] = fields[7].value; //add node text
     xmlObj["location"] = fields[9].value; //add node location
     this.parentNode.parentNode.removeChild(this.parentNode); //remove this form and its encapsulating div from the page
-    var addedNode = nodeRetriever.AddNewNode(xmlObj);
-    addNodeInfo(addedNode); //send request and info for new node to server
+    utils.SendXML(xmlObj, addNodeInfo); //send request and info for new node to server
+    return true;
 }
 
-
 function checkPassword() { //checks the password
-    if (passField.value == "hi") { //if the password is correct
+    if (passField.value == "dundermifflin") { //if the password is correct
         formDiv.innerHTML = ""; //remove the password field
-        nodeRetriever.GetNodeFile(txtDB, {text: "ALL"}, addNodeInfo);
+        utils.SendXML({request: "GetNextNodes", text: "ALL"}, addNodeInfo); //get all the nodes, then add to page
     } else {
         textDiv.innerHTML = "<p>Password incorrect, please try again.</p>"; //display incorrect password message
     }

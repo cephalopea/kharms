@@ -1,0 +1,22 @@
+{
+  "name": "220-final",
+  "version": "1.0.0",
+  "description": "final project for csc-220",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cephalopea/220-final.git"
+  },
+  "author": "caiti hensley, emma tanur, virtue winter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cephalopea/220-final/issues"
+  },
+  "homepage": "https://github.com/cephalopea/220-final#readme",
+  "dependencies": {
+    "mongodb": "^3.2.3"
+  }
+}

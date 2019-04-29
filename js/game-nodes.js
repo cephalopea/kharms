@@ -1,4 +1,4 @@
-import * as loc from "./location-handler.js";
+import * as loc from "./location.js";
 import * as nodeRetriever from "./node-retriever.js";
 
 function SelectOption() { //handles selecting a node
