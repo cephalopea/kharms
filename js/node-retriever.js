@@ -1,5 +1,3 @@
-import * as fs from "./fs";
-
 var txtDB = "public-html/txt/fake-db.txt";
 var nodes = undefined;
 
@@ -30,7 +28,8 @@ function LoadAllNodes(filepath) { //gets all the nodes from the txt file databas
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
     var finalNodes = []; //holds all the nodes retrieved from the database/txt doc
-    var nodeDoc = fs.readFileSync(filepath).toString(); //read everything in the txt doc and convert to string
+    var reader = new FileReader(); //create new filereader
+    var nodeDoc = reader.readAsText(filepath); //read everything in the txt doc and convert to string
     if (nodeDoc != "") {
         var addNodes = nodeDoc.split("\n"); //split the string at newlines (split into nodes)
         for (let node of addNodes) { //for each string that represents a node
