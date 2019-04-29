@@ -19,14 +19,14 @@ function UnstringifyNode(node) { //returns nodes like this: {"id": 1, "parent": 
     return finishedNode; //return the node
 }
 
-function GetNodeFile(filepath) {
+function GetNodeFile(filepath, query, callback) {
     var fileReq = new XMLHttpRequest();
-    fileReq.addEventListener("load", LoadAllNodes);
+    fileReq.addEventListener("load", function() {LoadAllNodes(query, callback)});
     fileReq.open("GET", filepath);
     fileReq.send();
 }
 
-function LoadAllNodes() { //gets all the nodes from the txt file database
+function LoadAllNodes(query) { //gets all the nodes from the txt file database
     //assumes txt file is formatted with each node on a newline, commas between key/val pairs, and = between key and value (no colon)
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
@@ -41,8 +41,7 @@ function LoadAllNodes() { //gets all the nodes from the txt file database
         finalNodes = "EMPTY";
     }
     nodes = finalNodes;
-    console.log("nodes: " + nodes)
-    return finalNodes; //return all the nodes (or nothing, if there's nothing)
+    GetNextNodes(query, callback);
 }
 
 export function AddNewNode(newNode) {
@@ -69,22 +68,23 @@ export function AddNewNode(newNode) {
     })   
 }
 
-//async issues i think
-export function GetNextNodes(query) { //gets the child nodes of a given node based on that node's text content
+export function GetNextNodes(query, callback) { //gets the child nodes of a given node based on that node's text content
     //probably use database to store nodes, for now gonna use a text file
     //get the children of this node
-    var prevNode = query["parent"]; //get text of prev node
-    GetNodeFile(txtDB); //get all the nodes
-    var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
-    if (nodes == "EMPTY") {
-        nodesToLoad = "EMPTY";
-    } else if (query["text"] =="ALL") {
-        nodesToLoad = nodes;
+    if (nodes == undefined) {
+        GetNodeFile(textDB, query, callback);
     } else {
-        nodesToLoad = nodes.filter(node => { //filter all the nodes and assign the returned nodes to nodesToLoad
-            return(node["parent"] == prevNode); //get the nodes whose parent matches the parent passed in
-        });
+        var prevNode = query["parent"]; //get text of prev node
+        var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
+        if (nodes == "EMPTY") {
+            nodesToLoad = "EMPTY";
+        } else if (query["text"] =="ALL") {
+            nodesToLoad = nodes;
+        } else {
+            nodesToLoad = nodes.filter(node => { //filter all the nodes and assign the returned nodes to nodesToLoad
+                return(node["parent"] == prevNode); //get the nodes whose parent matches the parent passed in
+            });
+        }
+        callback({nodes: nodesToLoad, error: undefined}); //make an object (sendObj) to send that contains the child nodes of our selected parent
     }
-    console.log("returning: " + nodesToLoad);
-    return {nodes: nodesToLoad, error: undefined}; //make an object (sendObj) to send that contains the child nodes of our selected parent
 }

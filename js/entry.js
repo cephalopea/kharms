@@ -1,5 +1,7 @@
 import * as nodeRetriever from "./node-retriever.js";
 
+var txtDB = "txt/fake-db.txt";
+
 var textDiv = undefined;
 var form = undefined;
 var formDiv = undefined;
@@ -121,11 +123,11 @@ function enterChildNode() {
     addNodeInfo(addedNode); //send request and info for new node to server
 }
 
+
 function checkPassword() { //checks the password
     if (passField.value == "dundermifflin") { //if the password is correct
         formDiv.innerHTML = ""; //remove the password field
-        var nodes = nodeRetriever.GetNextNodes({text: "ALL"});
-        addNodeInfo(nodes);
+        nodeRetriever.GetNodeFile(textDB, {text: "ALL"}, addNodeInfo);
     } else {
         textDiv.innerHTML = "<p>Password incorrect, please try again.</p>"; //display incorrect password message
     }
