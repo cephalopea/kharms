@@ -127,7 +127,7 @@ function enterChildNode() {
 function checkPassword() { //checks the password
     if (passField.value == "dundermifflin") { //if the password is correct
         formDiv.innerHTML = ""; //remove the password field
-        nodeRetriever.GetNodeFile(textDB, {text: "ALL"}, addNodeInfo);
+        nodeRetriever.GetNodeFile(txtDB, {text: "ALL"}, addNodeInfo);
     } else {
         textDiv.innerHTML = "<p>Password incorrect, please try again.</p>"; //display incorrect password message
     }

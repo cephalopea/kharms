@@ -72,7 +72,7 @@ export function GetNextNodes(query, callback) { //gets the child nodes of a give
     //probably use database to store nodes, for now gonna use a text file
     //get the children of this node
     if (nodes == undefined) {
-        GetNodeFile(textDB, query, callback);
+        GetNodeFile(txtDB, query, callback);
     } else {
         var prevNode = query["parent"]; //get text of prev node
         var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
