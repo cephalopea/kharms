@@ -1,0 +1,104 @@
+a:link {
+    text-align: center;
+    display: block;
+    color: green;
+}
+
+a:visited {
+    text-align: center;
+    display: block;
+    color: green;
+}
+
+a:hover {
+    text-align: center;
+    display: block;
+    color: darkgreen;
+}
+
+a:active {
+    text-align: center;
+    display: block;
+    color: green;
+}
+
+body {
+    background-color: gray;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+    
+}
+
+h4 {
+    
+}
+
+h5 {
+    
+}
+
+h6 {
+    
+}
+
+p {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    line-height: 1.5;
+}
+
+li {
+
+}
+
+ul {
+
+}
+
+* {
+    color: white;
+    font-family: "Press Start 2P", serif;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+/*above are html tags, below are custom classes*/
+
+.auth {
+    text-align: left;
+    position: relative;
+    left: 0;
+}
+
+.history {
+    text-align: right;
+    position: relative;
+    right: 0;
+}
+
+.user {
+    text-align: center;
+    cursor: pointer;
+    color: lawngreen;
+}
