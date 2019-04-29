@@ -1,3 +1,5 @@
+import * as nodeRetriever from "./node-retriever.js";
+
 var textDiv = undefined;
 var form = undefined;
 var formDiv = undefined;
