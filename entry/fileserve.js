@@ -29,27 +29,25 @@ function GetContentType(ext) { //returns the content type of a given file extens
 function ModifyFilepath (filepath, ext) { //adds the correct directory prefixes to the filepath in order to find files within the hierarchy
     switch(ext) { //switch case looks at file extension
         case ".js":
-            filepath = "js/" + filepath;
+            filepath = "public-html/js/" + filepath;
             break;
         case ".html":
-            filepath = "html/" + filepath;
+            filepath = "public-html/html/" + filepath;
             break;
         case ".css":
-            filepath = "css/" + filepath;
+            filepath = "public-html/css/" + filepath;
             break;
         case ".txt":
             //TODO: mod this so you can use it for entry
-            filepath = "txt/" + filepath;
-            filepath == "../" + filepath;
-            return filepath;
+            filepath = "../txt/" + filepath;
             break;
         case ".csv":
-            filepath = "csv/" + filepath;
+            filepath = "public-html/csv/" + filepath;
             break;
         default:
             return filepath;
     }
-    filepath = "public-html/" + filepath;
+    console.log(filepath);
     return filepath;
 }
 
@@ -63,6 +61,7 @@ exports.ServeFile = (filepath, res) => { //takes a relative filepath, finds cont
     } else { //else file type was recognized, attempt to read and serve file
         fs.readFile(filepath, function(err, data) {
             if (err) { //if file can't be read, serve error
+                console.log("error at: " + filepath);
                 res.writeHead(404, {'Content-Type': 'text/plain'});
                 res.write('Error: Unable to read file.');
                 res.end();

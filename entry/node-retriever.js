@@ -1,8 +1,7 @@
 var utils = require("./server-utils.js");
 var fs = require("fs");
 
-var txtDB = "public-html/txt/fake-db.txt";
-var userDB = "public-html/txt/save-keys.txt";
+var txtDB = "../txt/fake-db.txt";
 var nodes = undefined;
 
 function StringifyNode(node) { //returns nodes like this: id=1|parent=0|type=user|text=I spin around in a circle.|location=field
