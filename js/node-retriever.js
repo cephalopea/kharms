@@ -41,6 +41,7 @@ function LoadAllNodes() { //gets all the nodes from the txt file database
         finalNodes = "EMPTY";
     }
     nodes = finalNodes;
+    console.log("nodes: " + nodes)
     return finalNodes; //return all the nodes (or nothing, if there's nothing)
 }
 
@@ -74,9 +75,6 @@ export function GetNextNodes(query) { //gets the child nodes of a given node bas
     //get the children of this node
     var prevNode = query["parent"]; //get text of prev node
     GetNodeFile(txtDB); //get all the nodes
-    while (nodes == undefined) {
-        //do nothing
-    }
     var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
     if (nodes == "EMPTY") {
         nodesToLoad = "EMPTY";
