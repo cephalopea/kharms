@@ -31,19 +31,15 @@ function LoadAllNodes() { //gets all the nodes from the txt file database
     //sample input line:
     //id=1|parent=0|type=user|text=I spin around in a circle.|location=field
     var nodeDoc = this.responseText;
-    console.log("node doc: ***" + nodeDoc + "***")
     var finalNodes = []; //holds all the nodes retrieved from the database/txt doc
     if (nodeDoc != "") {
-        console.log("not empty")
         var addNodes = nodeDoc.split("\n"); //split the string at newlines (split into nodes)
         for (let node of addNodes) { //for each string that represents a node
             finalNodes.push(UnstringifyNode(node)); //add finishedNode to the collection of all the nodes
         }
     } else {
-        console.log("empty")
         finalNodes = "EMPTY";
     }
-    console.log("finalNodes: " + finalNodes)
     nodes = finalNodes;
     return finalNodes; //return all the nodes (or nothing, if there's nothing)
 }
@@ -77,6 +73,7 @@ export function GetNextNodes(query) { //gets the child nodes of a given node bas
     //get the children of this node
     var prevNode = query["parent"]; //get text of prev node
     GetNodeFile(txtDB); //get all the nodes
+    console.log("nodes: "+ nodes)
     var nodesToLoad = undefined; //create a variable to hold the child nodes and set it explicitly to undefined for now
     if (nodes == "EMPTY") {
         nodesToLoad = "EMPTY";
