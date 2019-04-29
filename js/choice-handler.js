@@ -17,8 +17,7 @@ function SelectOption() { //handles selecting a node
             elems[0].parentNode.removeChild(elems[0]); //remove the first one from the page
         }
     }
-    var nodes = nodeRetriever.GetNextNodes({parent: this.id}); //send a request to the server to load the next set of child nodes
-    LoadNodes(nodes);
+    nodeRetriever.GetNextNodes({parent: this.id}, LoadNodes); //send a request to the server to load the next set of child nodes
 }
 
 function AddUnderline() { //adds an underline to an element
