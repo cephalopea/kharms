@@ -1,25 +1,25 @@
 a:link {
     text-align: center;
     display: block;
-    color: green;
+    color: orange;
 }
 
 a:visited {
     text-align: center;
     display: block;
-    color: green;
+    color: orange;
 }
 
 a:hover {
     text-align: center;
     display: block;
-    color: darkgreen;
+    color: orange;
 }
 
 a:active {
     text-align: center;
     display: block;
-    color: green;
+    color: orange;
 }
 
 body {
@@ -75,7 +75,7 @@ ul {
 
 * {
     color: white;
-    font-family: "Press Start 2P", serif;
+    font-family: Verdana, Geneva, sans-serif;
     text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
@@ -100,5 +100,5 @@ ul {
 .user {
     text-align: center;
     cursor: pointer;
-    color: lawngreen;
+    color: #d66b00;
 }

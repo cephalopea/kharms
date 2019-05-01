@@ -18,7 +18,7 @@ id=15|parent=12|type=user|text=Time to move along.|location=street
 id=16|parent=14|type=auth|text=You get bored of standing out on the street and invite Sakerdon Mikhailovich into a cellar. You drink vodka, chasing it with hard-boiled eggs and sprats, then say your goodbyes, and you go on alone.<br><br>Then you suddenly remember that you've forgotten to turn off the electric stove at home.|location=street
 id=18|parent=14|type=user|text=Go home to turn off the stove.|location=street
 id=19|parent=14|type=user|text=Ignore it.|location=street
-id=19|parent=18|type=auth|text=You're very upset. You turn around and walk home. The day began so well, and already the first bad turn. You should not have gone outside.|location=street
+id=19|parent=18|type=auth|text=You're very upset. You turn around and walk home. The day began so well, and already the first bad turn. You should not have gone outside.|location=home
 id=20|parent=18|type=user|text=Take a nap.|location=home
 id=21|parent=20|type=auth|text=I come home, take off my jacket, take my watch out of my vest pocket and hang it up on the nail; then I lock the door and lie down on the sofa. I'll lie here and try to fall asleep.<br><br>From the street you can hear the unpleasant screams of little boys. You lie there dreaming up tortures for them. |location=home
 id=22|parent=20|type=user|text=Torture them with tetanus.|location=home
