@@ -2,14 +2,16 @@ import * as loc from "./location.js";
 import * as nodeRetriever from "./file-retriever.js";
 
 function SelectOption() { //handles selecting a node
-    this.classList.remove("user"); //remove the user class from the selected node
+    var id = this.id; //because we're deleting the clicked node, store its id first
+    //going to remove all the history nodes as well for this game because the text flows better
+    /*this.classList.remove("user"); //remove the user class from the selected node
     this.classList.add("history"); //add the history class to the selected node
     this.style.textDecoration = "none"; //remove possible underline from the text displayed
     this.removeEventListener("click", SelectOption); //remove the event listeners from this node
     this.removeEventListener("mouseover", AddUnderline);
-    this.removeEventListener("mouseout", RemoveUnderline);
+    this.removeEventListener("mouseout", RemoveUnderline);*/
     var unchosenElems = document.getElementsByClassName("user"); //get all the remaining unpicked nodes
-    var elems = undefined; //set up a var to hold elements (and explicitly set it to undefined?)
+    var elems = undefined; //set up a var to hold elements and explicitly set it to undefined
     while (elems = document.getElementsByClassName("user")) { //while there are still user elements left, assign them to elems
         if (elems[0] == undefined) { //if there's no user elements left in the page, elems will be undefined
             break; //don't do anything, there's nothing left to do things to
@@ -17,7 +19,7 @@ function SelectOption() { //handles selecting a node
             elems[0].parentNode.removeChild(elems[0]); //remove the first one from the page
         }
     }
-    nodeRetriever.GetNextNodes({parent: this.id}, LoadNodes); //send a request to the server to load the next set of child nodes
+    nodeRetriever.GetNextNodes({parent: id}, LoadNodes); //send a request to the server to load the next set of child nodes
 }
 
 function AddUnderline() { //adds an underline to an element
