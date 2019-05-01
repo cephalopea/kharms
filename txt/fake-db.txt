@@ -20,7 +20,7 @@ id=18|parent=14|type=user|text=Go home to turn off the stove.|location=street
 id=19|parent=14|type=user|text=Ignore it.|location=street
 id=19|parent=18|type=auth|text=You're very upset. You turn around and walk home. The day began so well, and already the first bad turn. You should not have gone outside.|location=home
 id=20|parent=18|type=user|text=Take a nap.|location=home
-id=21|parent=20|type=auth|text=I come home, take off my jacket, take my watch out of my vest pocket and hang it up on the nail; then I lock the door and lie down on the sofa. I'll lie here and try to fall asleep.<br><br>From the street you can hear the unpleasant screams of little boys. You lie there dreaming up tortures for them. |location=home
+id=21|parent=20|type=auth|text=You come home, take off your jacket, take your watch out of your vest pocket and hang it up on the nail. Then you lock the door and lie down on the sofa. You'll lie here and try to fall asleep.<br><br>From the street you can hear the unpleasant screams of little boys. You lie there dreaming up tortures for them. |location=home
 id=22|parent=20|type=user|text=Torture them with tetanus.|location=home
 id=23|parent=22|type=auth|text=Most of all you like the idea of afflicting them with tetanus so that they'd suddenly stop moving. Their parents drag them back to their respective homes. They lie in their little beds and can't even eat, because their mouths don't open. They are nourished artificially. After a week the tetanus goes away, but the children are so weak that they still have to be confined to their beds for a whole month more. Then, bit by bit, they begin to recover.|location=home
 id=24|parent=22|type=user|text=Finish them off.|location=home
