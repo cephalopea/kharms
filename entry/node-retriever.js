@@ -11,8 +11,12 @@ function StringifyNode(node) { //returns nodes like this: id=1|parent=0|type=use
     });
     var spaceRegexp = new RegExp("%20", "g");
     var apostRegexp = new RegExp("%27", "g");
+    var regexp1 = new RegExp("%3C", "g");
+    var regexp2 = new RegExp("%3E", "g");
     finishedNode = finishedNode.replace(spaceRegexp, " "); //replace url space with regular space
     finishedNode = finishedNode.replace(apostRegexp, "'"); //replace url ' with regular '
+    finishedNode = finishedNode.replace(regexp1, "<");
+    finishedNode = finishedNode.replace(regexp2, ">");
     return finishedNode.slice(0,-1); //remove unnecessary | from end of string, and return
 }
 
@@ -51,8 +55,12 @@ exports.AddNewNode = (res, newNode) => {
     }
     var spaceRegexp = new RegExp("%20", "g");
     var apostRegexp = new RegExp("%27", "g");
+    var regexp1 = new RegExp("%3C", "g");
+    var regexp2 = new RegExp("%3E", "g");
     newNode["text"] = newNode["text"].replace(spaceRegexp, " "); //replace url space with regular space
     newNode["text"] = newNode["text"].replace(apostRegexp, "'"); //replace url ' with regular '
+    newNode["text"] = newNode["text"].replace(regexp1, "<");
+    newNode["text"] = newNode["text"].replace(regexp2, ">");
     fs.appendFile(txtDB, newNodeString, (err) => { //append the new node to the text file OR add it to the database, depending on implementation 
         if (err) {
             utils.sendJSONObj(res, 500, {error: "Error adding new node to database"}); //send error msg to client
