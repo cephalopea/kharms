@@ -5,12 +5,12 @@ var location = undefined;
 var audio = null;
 
 function GetSound(query) {
-    var file_name = "sounds/" + query["location"] + ".jpeg";
+    var file_name = "sounds/" + query["location"] + ".mp3";
     UpdateSound({error: undefined, files: file_name});
 }
 
 function GetBackground(query) { // location is the location of the story. eg. 'field'
-    var file_name = "images/" + query["location"] + ".mp3";
+    var file_name = "images/" + query["location"] + ".jpeg";
     UpdateBackground({error: undefined, files: file_name});
 }
 
