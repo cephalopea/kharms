@@ -1,4 +1,4 @@
-id=0|parent=ROOT|type=auth|text=In the courtyard stands an old woman holding in her hands a clock.|location=courtyard
+id=0|parent=ROOT|type=auth|text=Original text - 'The Old Woman', Daniil Kharms<br><br>Original translation - Matvei Yankelevich<br><br>Adaptation - Caiti Hensley<br><br><br><br>In the courtyard stands an old woman holding in her hands a clock.|location=courtyard
 id=1|parent=ROOT|type=user|text=Ignore her.|location=courtyard
 id=2|parent=ROOT|type=user|text=Ask her for the time.|location=courtyard
 id=3|parent=2|type=auth|text=You walk past the old woman, stop, and ask her: <i>What time is it?<br><br>Take a look,</i> says the old woman.|location=courtyard
