@@ -68,8 +68,8 @@ function LoadNodes(nodes) { //load received nodes into the html page
             body.appendChild(tryAgainLink); //append try again to bottom
             tryAgainLink.scrollIntoView(); //scroll to bottom
         }
-        var break = document.createElement("p"); //add some space between sets of nodes
-        body.appendChild(break); //append to body
+        var breakk = document.createElement("p"); //add some space between sets of nodes
+        body.appendChild(breakk); //append to body
         loc.CheckLocation(authNode); //check location
         return authNode; //return the authnode
     }
