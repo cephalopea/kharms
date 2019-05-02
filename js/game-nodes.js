@@ -57,18 +57,20 @@ function LoadNodes(nodes) { //load received nodes into the html page
                 textRep.classList.add("user"); //add user class to p elem
                 body.appendChild(textRep); //append the elem to the body
                 textRep.addEventListener("click", SelectOption); //add the three event listeners
-                textRep.addEventListener("mouseover", AddUnderline);
+                textRep.addEventListener("mouseover", AddUnderline); 
                 textRep.addEventListener("mouseout", RemoveUnderline);
-                textRep.scrollIntoView();
+                textRep.scrollIntoView(); //scroll down so this is visible
             }
         } else {
-            var tryAgainLink = document.createElement("a");
-            tryAgainLink.innerHTML = "Try again?";
-            tryAgainLink.setAttribute("href", "/game.html");
-            body.appendChild(tryAgainLink);
-            tryAgainLink.scrollIntoView();
+            var tryAgainLink = document.createElement("a"); //create link
+            tryAgainLink.innerHTML = "Try again?"; //set link text
+            tryAgainLink.setAttribute("href", "/game.html"); //set link target
+            body.appendChild(tryAgainLink); //append try again to bottom
+            tryAgainLink.scrollIntoView(); //scroll to bottom
         }
-        loc.CheckLocation(authNode);
+        var break = document.createElement("p"); //add some space between sets of nodes
+        body.appendChild(break); //append to body
+        loc.CheckLocation(authNode); //check location
         return authNode; //return the authnode
     }
 }
