@@ -66,6 +66,7 @@ function LoadNodes(nodes) { //load received nodes into the html page
             tryAgainLink.innerHTML = "Try again?";
             tryAgainLink.setAttribute("href", "/game.html");
             body.appendChild(tryAgainLink);
+            tryAgainLink.scrollIntoView();
         }
         loc.CheckLocation(authNode);
         return authNode; //return the authnode
