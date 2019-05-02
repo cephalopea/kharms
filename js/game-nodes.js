@@ -50,6 +50,7 @@ function LoadNodes(nodes) { //load received nodes into the html page
         body.appendChild(textRep); //append the p elem to the body of the page
         if (userNodes.length > 0) {
             for (let node of userNodes) { //do the same basic thing for all the user nodes
+                
                 var textRep = document.createElement("p"); //create p elem
                 textRep.innerHTML = node["text"]; //add node text to p elem
                 textRep.setAttribute("id", node["id"]);
@@ -58,6 +59,7 @@ function LoadNodes(nodes) { //load received nodes into the html page
                 textRep.addEventListener("click", SelectOption); //add the three event listeners
                 textRep.addEventListener("mouseover", AddUnderline);
                 textRep.addEventListener("mouseout", RemoveUnderline);
+                textRep.scrollIntoView();
             }
         } else {
             var tryAgainLink = document.createElement("a");
